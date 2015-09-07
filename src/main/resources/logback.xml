@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!--
+        Enable/disable these as needed. Be sure to change the driver in application.properties in order to enable the
+        logging. That has to be done in tandem with setting up this logger.
+    -->
+    <!--<logger name="log4jdbc.log4j2" level="info" additivity="false">-->
+        <!-- See docs on how to configure the MarkerFilters here: https://code.google.com/p/log4jdbc-log4j2/ -->
+        <!--<MarkerFilter marker="LOG4JDBC_OTHER" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_EXCEPTION" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_SQL" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_SELECT" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_INSERT" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_UPDATE" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_CREATE" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_DELETE" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_NON_STATEMENT" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_CONNECTION" onMatch="DENY" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_OTHER" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_JDBC" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_AUDIT" onMatch="DENY" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_RESULTSET" onMatch="DENY" onMismatch="DENY"/>-->
+        <!--<MarkerFilter marker="LOG4JDBC_RESULTSETTABLE" onMatch="ACCEPT" onMismatch="DENY"/>-->
+        <!--<appender-ref ref="STDOUT"/>-->
+    <!--</logger>-->
+
+    <!--
+        Adjust logging for your application as appropriate.
+    -->
+    <logger name="com.laranevans" level="TRACE"/>
+
+    <!--
+        WARN root level is nice because it keeps out most of the "spammy" log messages which can make it harder
+        to see the ones from your application. Adjust as desired.
+    -->
+    <root level="WARN">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

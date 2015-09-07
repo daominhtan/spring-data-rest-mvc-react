@@ -1,0 +1,2 @@
+/* Necessary to render the fixed header properly. */
+body { padding-top: 50px; }
