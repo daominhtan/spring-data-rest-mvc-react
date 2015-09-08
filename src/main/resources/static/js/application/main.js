@@ -18,6 +18,9 @@ var Navbar = React.createClass({
                             <li className="active"><a href="/#/about">About</a></li>
                             <li className=""><a href="/#/people">People</a></li>
                         </ul>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li><a href="/#/login">Login</a></li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -151,18 +154,33 @@ var ErrorHandler = {
 // FIXME This is what I really want to work on to get the modal login/logout/etc. working smoothly.
 
 var Login = React.createClass({
+    doLogin: function(event) {
+        // Just prevent the screen reload from the form actually submitting.
+        event.preventDefault();
+        var username = React.findDOMNode(this.refs.username).value;
+        var password= React.findDOMNode(this.refs.password).value;
+        alert("TODO! Let's turn this into a modal form!");
+    },
     render: function() {
+        var self = this;
         return (
             <div className="container">
                 <h1>Login</h1>
-                <form className="">
-                    <div className="form-group">
-                        <input type="text" placeholder="Email" className="form-control"/> <input
-                            type="password" placeholder="Password" className="form-control"/> <button
-                            type="submit" className="btn btn-success">Sign in</button>
-                    </div>
-                </form>
-
+                <div className="col-md-4 col-md-offset-4">
+                    <form className="" onSubmit={self.doLogin}>
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input type="text" placeholder="Username" className="form-control" ref="username"
+                                value="user"/>
+                        </div>
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Password" className="form-control"
+                                ref="password" value="password"/>
+                        </div>
+                        <button type="submit" className="btn btn-success">Sign in</button>
+                    </form>
+                </div>
             </div>
         );
     }
