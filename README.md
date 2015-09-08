@@ -6,13 +6,20 @@ Run the application with `mvn spring-boot:run`.
 
 Once it's running, access the app at `http://localhost:8080/`.
 
-The java code is all where you would expect it for a maven app (src/main/java).
+The java code is in `src/main/java`.
 
 The React/js code is all in `src/main/resources/static/js/application/main.js`.
 
 # Goals
 
 In particular, I want to use this as a reference implementation for how to implement authentication and access control through  spring-security, but from a single page app. Spring Security has conventions and expectations around login that are more rigid than what's expected in a reactive client world. For instance, passing authentication tokens around, model login dialogs, etc. are all a bit out of the range of "normal" for spring-security. So I wanted to develop this as a reference implementation for how to do it.
+
+# TODOs
+
+- Implement the whole modal login piece (could use help on this).
+- Build a better UI to show the resources and the javascript repositories.
+- Write some tests.
+- Better highlight the interesting bits that made integrating React with spring-date-rest-mvc a bit tricky.
 
 ## Why a Spring backend?
 
