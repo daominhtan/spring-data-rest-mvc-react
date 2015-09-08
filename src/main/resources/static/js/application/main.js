@@ -34,7 +34,8 @@ var Footer = React.createClass({
                         <p>&copy; Nobody 2015</p>
                     </div>
                     <div className="col-md-6 text-right">
-                        <a href="/#/terms">Terms of Service</a> | <a href="/#/privacy">Privacy Policy</a>
+                        <a href="https://github.com/laran/spring-data-rest-mvc-react">Project page on Github</a> | <a
+                            href="/#/terms">Terms of Service</a> | <a href="/#/privacy">Privacy Policy</a>
                     </div>
                 </div>
             </footer>
