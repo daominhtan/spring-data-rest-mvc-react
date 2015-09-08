@@ -16,6 +16,7 @@ var Navbar = React.createClass({
                     <div id="navbar" className="navbar-collapse collapse">
                         <ul className="nav navbar-nav">
                             <li className="active"><a href="/#/about">About</a></li>
+                            <li className=""><a href="/#/people">People</a></li>
                         </ul>
                     </div>
                 </div>
@@ -415,11 +416,18 @@ var PersonController = React.createClass({
     },
     render: function() {
         var self = this;
+        var title = 'People';
+        if(self.props.params.id) {
+            title = 'Person ('+self.props.params.id+')';
+        }
         return (
             <div className="container">
+                <h1>{title}</h1>
                 <p>I haven't written a real UI for the resources on the backend. It would be great to have you
-                    contribute something.</p>
+                    contribute!</p>
                 <p>You'll want to look at the source code to see everything that's interesting to see.</p>
+                <p>Here's a link to <a href="/#/people">the people resource</a></p>
+                <p>Here are links to <a href="/#/people/1">some</a>, <a href="/#/people/2">specific</a>, <a href="/#/people/3">people</a>.</p>
             </div>
         );
     }
